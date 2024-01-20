@@ -11,7 +11,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import "../Styled/Styled.css";
 
-const pages = ["Inicio", "Nosotros", "Contactos"];
+const pages = ["inicio", "nosotros", "contactos"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -26,6 +26,13 @@ function Navbar() {
 
   const ImgLogo =
     "https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2Fb73c659ee6e9498595d83dff7270f9e8?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2Fb73c659ee6e9498595d83dff7270f9e8?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2Fb73c659ee6e9498595d83dff7270f9e8?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2Fb73c659ee6e9498595d83dff7270f9e8?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2Fb73c659ee6e9498595d83dff7270f9e8?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2Fb73c659ee6e9498595d83dff7270f9e8?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2Fb73c659ee6e9498595d83dff7270f9e8?width=2000 2000w,";
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <AppBar
@@ -126,9 +133,19 @@ function Navbar() {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={() => {
+                  scrollToSection(page.toLowerCase());
+                  handleCloseNavMenu();
+                }}
                 className="btn"
-                sx={{ color: "white", margin: "0px 25px 0px 25px" }}
+                sx={{
+                  color: "white",
+                  margin: "0px 25px 0px 25px",
+                  noFocus: {
+                    outline: "none",
+                    boxShadow: "none",
+                  },
+                }}
               >
                 {page}
               </Button>
