@@ -1,6 +1,6 @@
 import * as React from "react";
 import Navbar from "./Navbar";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import HeroImg from "../img/HeroImg.jpeg";
 import LogoImg from "../img/LogoImg.png";
 
@@ -36,39 +36,72 @@ function MyComponent() {
         </Box>
       </Box>
       <div className="div-11">
-        <div className="div-12">
-          <div className="div-13">
-            <div className="column">
-              <div className="div-14">
-                <div className="div-15">
-                  <div className="div-16">Discover the best coffee</div>
-                  <div className="div-17">
-                    Bean Scene is a coffee shop that provides you with quality
-                    coffee that helps boost your productivity and helps build
-                    your mood. Having a cup of coffee is good, but having a cup
-                    of real coffee is greater. There is no doubt that you will
-                    enjoy this coffee more than others you have ever tasted.
-                  </div>
-                </div>
-                <img
-                  loading="lazy"
-                  srcSet="https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F4bd0506d62384871beb4e79c15f6fe82?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F4bd0506d62384871beb4e79c15f6fe82?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F4bd0506d62384871beb4e79c15f6fe82?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F4bd0506d62384871beb4e79c15f6fe82?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F4bd0506d62384871beb4e79c15f6fe82?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F4bd0506d62384871beb4e79c15f6fe82?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F4bd0506d62384871beb4e79c15f6fe82?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F4bd0506d62384871beb4e79c15f6fe82"
-                  className="img-4"
-                  alt=" "
-                />
-              </div>
-            </div>
-            <div className="column-2">
-              <img
-                loading="lazy"
-                srcSet="https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F63201190d80d4deb8ab0b74ab97a6984?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F63201190d80d4deb8ab0b74ab97a6984?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F63201190d80d4deb8ab0b74ab97a6984?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F63201190d80d4deb8ab0b74ab97a6984?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F63201190d80d4deb8ab0b74ab97a6984?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F63201190d80d4deb8ab0b74ab97a6984?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F63201190d80d4deb8ab0b74ab97a6984?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F63201190d80d4deb8ab0b74ab97a6984"
-                className="img-5"
-                alt=" "
-              />
-            </div>
-          </div>
-        </div>
-        <div className="div-18">
+        <Box
+          id="inicio"
+          sx={{
+            width: "100%",
+            maxWidth: "100%",
+            marginTop: { xs: "40px", md: 0 },
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gridTemplateRows: {
+              md: "auto auto auto",
+              xs: "auto auto auto auto",
+            },
+            gridTemplateAreas: {
+              xs: `"titel titel" "contend contend" "imgOne imgOne" "imgTwe imgTwe"`,
+              md: `"titel titel" "contend imgOne" "imgTwe imgTwe" `,
+            },
+          }}
+        >
+          <Typography
+            sx={{
+              gridArea: "titel",
+              margin: { xs: 0, md: "10px" },
+              maxWidth: "100%",
+              fontSize: { xs: "40px", md: "54px" },
+              color: "rgba(66, 96, 92, 1)",
+              font: "700 54px Playfair Display, -apple-system, Roboto, Helvetica, sans-serif",
+            }}
+          >
+            Discover the best coffee
+          </Typography>
+          <p
+            style={{
+              gridArea: "contend",
+              textAlign: "justify",
+              alignSelf: "center",
+              padding: "20px",
+            }}
+          >
+            Bean Scene is a coffee shop that provides you with quality coffee
+            that helps boost your productivity and helps build your mood. Having
+            a cup of coffee is good, but having a cup of real coffee is greater.
+            There is no doubt that you will enjoy this coffee more than others
+            you have ever tasted.
+          </p>
+          <Box sx={{ gridArea: "imgOne" }}>
+            <img
+              style={{
+                width: "500px",
+                margin: 0,
+              }}
+              loading="lazy"
+              srcSet="https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F63201190d80d4deb8ab0b74ab97a6984?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F63201190d80d4deb8ab0b74ab97a6984?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F63201190d80d4deb8ab0b74ab97a6984?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F63201190d80d4deb8ab0b74ab97a6984?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F63201190d80d4deb8ab0b74ab97a6984?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F63201190d80d4deb8ab0b74ab97a6984?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F63201190d80d4deb8ab0b74ab97a6984?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F63201190d80d4deb8ab0b74ab97a6984"
+              className="img-5"
+              alt=" "
+            />
+          </Box>
+          <Box sx={{ gridArea: "imgTwe", width: "100%" }}>
+            <img
+              style={{ width: "100px" }}
+              loading="lazy"
+              srcSet="https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F4bd0506d62384871beb4e79c15f6fe82?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F4bd0506d62384871beb4e79c15f6fe82?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F4bd0506d62384871beb4e79c15f6fe82?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F4bd0506d62384871beb4e79c15f6fe82?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F4bd0506d62384871beb4e79c15f6fe82?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F4bd0506d62384871beb4e79c15f6fe82?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F4bd0506d62384871beb4e79c15f6fe82?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2Fed8b2ea899284c0685a527cf3cea6f83%2F4bd0506d62384871beb4e79c15f6fe82"
+              alt=" "
+            />
+          </Box>
+        </Box>
+        <div id="nosotros" className="div-18">
           <div className="div-19">
             <div className="column-3">
               <div className="div-20">
@@ -146,7 +179,7 @@ function MyComponent() {
             </div>
           </div>
         </div>{" "}
-        <div className="div-36">
+        <div id="contactos" className="div-36">
           <div className="div-37">
             <img
               loading="lazy"
@@ -285,17 +318,6 @@ function MyComponent() {
           display: flex;
           flex-direction: column;
         }
-        .div-12 {
-          align-self: stretch;
-          margin-top: 82px;
-          width: 100%;
-        }
-        @media (max-width: 991px) {
-          .div-12 {
-            max-width: 100%;
-            margin-top: 40px;
-          }
-        }
         .div-13 {
           gap: 20px;
           display: flex;
@@ -342,19 +364,7 @@ function MyComponent() {
             padding: 0px;
           }
         }
-        .div-16 {
-          color: rgba(66, 96, 92, 1);
-          margin-left: 13px;
-          font: 700 54px Playfair Display, -apple-system, Roboto, Helvetica,
-            sans-serif;
-        }
-        @media (max-width: 991px) {
-          .div-16 {
-            max-width: 100%;
-            font-size: 40px;
-            margin: 0px;
-          }
-        }
+        
         .div-17 {
           color: #707070;
           margin: 51px 0 0 13px;
