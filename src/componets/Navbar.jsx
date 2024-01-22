@@ -141,10 +141,6 @@ function Navbar() {
                 sx={{
                   color: "white",
                   margin: "0px 25px 0px 25px",
-                  noFocus: {
-                    outline: "none",
-                    boxShadow: "none",
-                  },
                 }}
               >
                 {page}
