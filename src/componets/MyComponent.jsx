@@ -5,9 +5,10 @@ import HeroImg from "../img/HeroImg.jpeg";
 import LogoImg from "../img/LogoImg.png";
 import Start from "./Start";
 import About from "./About";
+import BackgroundHero from "../img/BackgroundHero.png";
 
 const backgroundStyle = {
-  backgroundImage: `url(${HeroImg})`,
+  backgroundImage: `url(${BackgroundHero})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
@@ -18,7 +19,7 @@ const backgroundStyle = {
   alignItems: "center",
   textAlign: "center",
   padding: "40px",
-  boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.6)",
+  // boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.6)",
   overflow: "hidden",
 };
 

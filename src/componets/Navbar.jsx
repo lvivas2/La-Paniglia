@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -14,7 +14,20 @@ import "../Styled/Styled.css";
 const pages = ["inicio", "nosotros", "contactos"];
 
 function Navbar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    setIsScrolled(scrollTop > 0);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -34,10 +47,22 @@ function Navbar() {
     }
   };
 
+  const styleBar = {
+    background: "rgb(209 188 172 / 58%)",
+    transition: "all .5s ease-out",
+    backdropFilter: "blur(10px)",
+  };
+
+  const styleBarNone = {
+    background: "#fff0",
+    transition: "all .5s ease-out",
+  };
+
   return (
     <AppBar
-      component="nav"
-      sx={{ background: "#a0b7a77d", backdropFilter: "blur(10px)" }}
+      position="fixed"
+      elevation={isScrolled ? 4 : 0}
+      sx={isScrolled ? styleBar : styleBarNone}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>

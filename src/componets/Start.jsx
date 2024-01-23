@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import Background from "../img/Background.png";
 
 function Start() {
   return (
@@ -8,7 +9,11 @@ function Start() {
         sx={{
           paddingTop: "80px",
           width: "100%",
-          backgroundColor: "rgba(209, 188, 172, 1)",
+          backgroundColor: "#F4EFF1",
+          backgroundImage: `url(${Background})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
           maxWidth: "100%",
           marginTop: { xs: "40px", md: 0 },
           display: "grid",
