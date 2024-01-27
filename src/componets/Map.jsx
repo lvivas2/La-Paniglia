@@ -50,8 +50,12 @@ const Map = ({ lat, lng, markerText }) => {
         }}
       >
         <Typography
-          variant="h3"
-          sx={{ fontWeight: 700, margin: "30px", color: "rgba(66, 96, 92, 1)" }}
+          sx={{
+            fontSize: { xs: "40px", md: "54px" },
+            margin: "30px",
+            color: "rgba(66, 96, 92, 1)",
+            font: "700 54px Playfair Display, -apple-system, Roboto, Helvetica, sans-serif",
+          }}
         >
           Visitanos
         </Typography>
