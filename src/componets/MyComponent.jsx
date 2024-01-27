@@ -6,6 +6,7 @@ import LogoImg from "../img/LogoImg.png";
 import Start from "./Start";
 import About from "./About";
 import BackgroundHero from "../img/BackgroundHero.png";
+import Map from "./Map";
 
 const backgroundStyle = {
   backgroundImage: `url(${BackgroundHero})`,
@@ -24,6 +25,11 @@ const backgroundStyle = {
 };
 
 function MyComponent() {
+  const Location = {
+    lat: "-34.59228029501882",
+    lng: "-58.42277343359694",
+  };
+
   return (
     <>
       <Navbar />
@@ -40,6 +46,7 @@ function MyComponent() {
       </Box>
       <Start />
       <About />
+      <Map lat={Location.lat} lng={Location.lng} markerText="Localidad" />
       <div className="div-11">
         <div className="div-24">Our coffee perfection feedback</div>
         <div className="div-25">
