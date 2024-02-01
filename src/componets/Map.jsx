@@ -41,7 +41,7 @@ const Map = ({ lat, lng, markerText }) => {
         sx={{
           height: "90vh",
           display: "flex",
-          padding: "0px 50px 50px 50px",
+          padding: "50px",
           backgroundImage: `url(${BackgroundMap})`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
@@ -49,16 +49,6 @@ const Map = ({ lat, lng, markerText }) => {
           flexDirection: "column",
         }}
       >
-        <Typography
-          sx={{
-            fontSize: { xs: "40px", md: "54px" },
-            margin: "30px",
-            color: "rgba(66, 96, 92, 1)",
-            font: "700 54px Playfair Display, -apple-system, Roboto, Helvetica, sans-serif",
-          }}
-        >
-          Visitanos
-        </Typography>
         <Box sx={{ display: "flex", height: "100%" }}>
           <Box
             sx={{
@@ -70,6 +60,34 @@ const Map = ({ lat, lng, markerText }) => {
               flexDirection: "column",
             }}
           >
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontSize: { xs: "40px", md: "44px" },
+                  color: "rgba(66, 96, 92, 1)",
+                  justifyContent: "left",
+                  display: "flex",
+                  alignContent: "flex-start",
+                  font: "700 54px Playfair Display, -apple-system, Roboto, Helvetica, sans-serif",
+                }}
+              >
+                Visitanos
+              </Typography>
+              <Box
+                sx={{
+                  marginLeft: "20px",
+                  width: "150px",
+                  height: "2px",
+                  background: "rgba(66, 96, 92, 1)",
+                }}
+              ></Box>
+            </Box>
             <Typography sx={styleTextsTitel}>
               <LocationOnIcon
                 sx={{

@@ -1,5 +1,15 @@
 import { Box, Typography } from "@mui/material";
 import Background from "../img/Background.png";
+import IconStart from "../img/IconStart.svg";
+import Cart from "./Card";
+// import Carousel from "./Carousel";
+
+const constainerCarts = {
+  display: "flex",
+  justifyContent: "space-between",
+  width: "90vw",
+  gridArea: "card",
+};
 
 function Start() {
   return (
@@ -17,15 +27,18 @@ function Start() {
           maxWidth: "100%",
           marginTop: { xs: "40px", md: 0 },
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
           gridTemplateRows: {
-            md: "auto auto auto",
+            md: "auto auto auto auto",
             xs: "auto auto auto auto",
           },
-          gridTemplateAreas: {
-            md: `"titel titel" "contend imgOne" "imgTwe imgTwe" `,
-            xs: `"titel titel" "contend contend" "imgOne imgOne" "imgTwe imgTwe"`,
+          gridTemplateColumns: {
+            md: "1fr",
+            xs: "1fr 1fr",
           },
+          gridTemplateAreas: {
+            xs: `"titel titel" "contend contend" "card card" "imgOne imgOne" "imgTwe imgTwe"`,
+          },
+          justifyItems: "center",
         }}
       >
         <Typography
@@ -38,22 +51,35 @@ function Start() {
             font: "700 54px Playfair Display, -apple-system, Roboto, Helvetica, sans-serif",
           }}
         >
-          Discover the best coffee
+          Nuestros deliciosos servicios
+          <Box
+            sx={{
+              width: "100%",
+              height: "20px",
+              backgroundImage: `url(${IconStart})`,
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+          ></Box>
         </Typography>
-        <p
-          style={{
+        <Typography
+          sx={{
             gridArea: "contend",
-            textAlign: "justify",
             alignSelf: "center",
             padding: "20px",
+            maxWidth: "800px",
+            marginBottom: "20px",
           }}
         >
-          Bean Scene is a coffee shop that provides you with quality coffee that
-          helps boost your productivity and helps build your mood. Having a cup
-          of coffee is good, but having a cup of real coffee is greater. There
-          is no doubt that you will enjoy this coffee more than others you have
-          ever tasted.
-        </p>
+          Ofrecemos una colección cuidadosamente seleccionada que muestra las
+          características distintivas de los granos procedentes de regiones
+          específicas.
+        </Typography>
+
+        <Box sx={constainerCarts}>
+          <Cart />
+        </Box>
+
         <Box sx={{ gridArea: "imgOne" }}>
           <img
             style={{
@@ -74,6 +100,7 @@ function Start() {
             alt=" "
           />
         </Box>
+        {/* <Carousel /> */}
       </Box>
     </>
   );

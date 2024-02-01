@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import imgAbout from "../img/imgAbout.png";
-import BackImg from "../img/BackImg.jpeg";
+import BackImg from "../img/BackImg.png";
 
 function About() {
   return (
